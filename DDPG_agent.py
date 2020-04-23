@@ -13,10 +13,10 @@ from collections import deque, namedtuple
 GAMMA = 0.99
 TAU = 1e-3
 BUFFER_SIZE = int(1e5)
-BATCH_SIZE = 128
+BATCH_SIZE = 256
 
-LR_ACTOR = 2e-4
-LR_CRITIC = 2e-4
+LR_ACTOR = 1e-3
+LR_CRITIC = 1e-3
 
 WEIGHT_DECAY = 0
 
@@ -54,7 +54,7 @@ class ReplayBuffer():
 class Agent():
     """Defines the agent that interacts with the environment"""
     
-    def __init__(self, state_size, action_size, seed):
+    def __init__(self, state_size, action_size, num_agents, seed):
         self.state_size = state_size
         self.action_size = action_size
         self.seed = seed
@@ -134,16 +134,9 @@ class Agent():
         for target_param, param in zip(target.parameters(), original.parameters()):
             target_param.data.copy_(tau*param.data + (1.0-tau)*target_param.data)
                                      
-    
-def Noise(action_size, seed):
-   random.seed(seed)
-   mu, sigma = 0, 0.2 
-   noise = np.random.normal(mu, sigma, action_size) 
-   return np.array(noise)
-
 
 class OUNoise():
-    def __init__(self, size, seed, mu=0., theta=0.15, sigma=0.1):
+    def __init__(self, size, seed, mu=0., theta=0.15, sigma=0.05):
         self.mu = mu * np.ones(size)
         self.sigma = sigma
         self.theta = theta
