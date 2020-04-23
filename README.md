@@ -1,19 +1,21 @@
 # README
 This repo contains my solution for the third project of the udacity Deep Reinforcement Learning Nanodegree.
-The code and implementation is based on my solution and only microscopically adapted to a multi-agent task.
+The code and implementation is based on my solution for the second project and only microscopically adapted to a multi-agent task. 
+
+The solution presented here is not a true multi-agent algorithm. The environment contains two agents with identical observation space and reward function and no need to communicate for collaboration, so the environment can be solved with only one agent without the need for a common Q-function. The experience tuples for both agents are collected in the replay buffer and used for training. 
 
 
 # Short Description of the environment
 
-The environment is a slightly modified Unity ML Tennis environment [(link)](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#reacher). It consists of two collaborating tennis playing agents, whose goal it is to keep the ball in the game as long as possible. Each agent scores  
+The environment is a slightly modified Unity ML Tennis environment [(link)](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#tennis). It consists of two collaborating tennis playing agents, whose goal it is to keep the ball in the game as long as possible. If the agent gets the ball over the net, it receives a reward of +0.1. If the agent drops the ball or hits it out, it receives a reward of -0.01.
 
 ## Observation Space
 
-The observation space is local to each agent and consists of a 8 * 3 vector of continuous observations. 
+The observation space is local to each agent and consists of a 8 * 3 vector (3 frames of 8 obervables) of continuous observations. 
 
 ## Action Space
 
-The action space of each agent is a continuous 2 dimensional continuos vector that describes the two degrees of freedom of the racket.
+The action space of each agent is a continuous 2 dimensional vector that describes the two degrees of freedom of the racket.
 
 ## Solution criterion
 
@@ -47,11 +49,9 @@ pip install ./python/requirements.txt
 
 The necessasry Unity environment can be downloaded from the following locations:
 
-- Linux: [(link)](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Linux.zip)
-- Mac OSX: [(link)](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher.app.zip)
-- Windows (64-bit): [(link)](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Windows_x86_64.zip)
-
-
+  - Linux: [link](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Linux.zip)
+  - Mac OSX: [link](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis.app.zip)
+  - Windows (64-bit): [link](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Windows_x86_64.zip)
 
 ## Execution
 

@@ -13,10 +13,10 @@ from collections import deque, namedtuple
 GAMMA = 0.99
 TAU = 1e-3
 BUFFER_SIZE = int(1e5)
-BATCH_SIZE = 256
+BATCH_SIZE = 128
 
-LR_ACTOR = 1e-3
-LR_CRITIC = 1e-3
+LR_ACTOR = 3e-3
+LR_CRITIC = 3e-3
 
 WEIGHT_DECAY = 0
 
