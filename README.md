@@ -36,15 +36,23 @@ The files of interest in the repo are:
 
 # Getting Started, Installation and Dependencies
 
-To run this code, you have to install the dependencies and the environment.
+To run this code, you have to do three things: Download or clone this reop, install the dependencies and download and copy the environment to the right folder.
+
+## Cloning this repo
+
+You can either clone this repo from the command line or download and uncompress the content of this repo by using the green "Clone or Download and "Download ZIP" button. 
 
 ## Dependencies  
 
-The code requires Python 3. The  necessary dependencies can be found in `./python/requirements.txt` 
+The code requires Python 3.6. The  necessary dependencies can be found in `./python/requirements.txt` 
 Batch installation is done like so: 
 ```
 pip install ./python/requirements.txt
 ``` 
+
+This is also done in the first cell of the notebook `Tennis.ipynb`.
+
+
 ## Environment
 
 The necessasry Unity environment can be downloaded from the following locations:
@@ -52,6 +60,13 @@ The necessasry Unity environment can be downloaded from the following locations:
   - Linux: [link](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Linux.zip)
   - Mac OSX: [link](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis.app.zip)
   - Windows (64-bit): [link](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Windows_x86_64.zip)
+
+Download and unzip the appropriate version for your operating system, then unzip to a location of your choice and change the path in the second cell to the location of the files:
+
+```
+env = UnityEnvironment(file_name="/data/Tennis_Linux_NoVis/Tennis")
+``` 
+
 
 ## Execution
 
